@@ -1,0 +1,115 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<style type="text/css">
+    [draggable] {
+        -moz-user-select: none;
+        -khtml-user-select: none;
+        -webkit-user-select: none;
+        user-select: none;
+        /* Required to make elements draggable in old WebKit */
+        -khtml-user-drag: element;
+        -webkit-user-drag: element;
+    }
+</style>
+
+<div class="container">
+
+    <div class="row">
+        <div style="padding:3px">
+            <span class="label label-success tttag" draggable="true" style="cursor:pointer">
+                <span class="glyphicon glyphicon-adjust"></span> asdf
+            </span> &nbsp;
+            <span class="label label-success tttag" draggable="true" style="cursor:pointer">
+                <span class="glyphicon glyphicon-adjust"></span> asdfd asdfasd
+            </span>
+            <span class="label label-success tttag" draggable="true" style="cursor:pointer">
+                <span class="glyphicon glyphicon-adjust"></span> asdf fdsf asdfa
+            </span>
+            <span class="label label-success tttag" draggable="true" style="cursor:pointer">
+                <span class="glyphicon glyphicon-adjust"></span> asdf ds
+            </span>
+            <span class="label label-success tttag" draggable="true" style="cursor:pointer">
+                <span class="glyphicon glyphicon-adjust"></span> asdf s
+            </span>
+            <span class="label label-success tttag" draggable="true" style="cursor:pointer">
+                <span class="glyphicon glyphicon-adjust"></span> asdf
+            </span>
+            <span class="label label-success tttag" draggable="true" style="cursor:pointer">
+                <span class="glyphicon glyphicon-adjust"></span> asdf asdf asdfasd asdfasd
+            </span>
+            <span class="label label-success tttag" draggable="true" style="cursor:pointer">
+                <span class="glyphicon glyphicon-adjust"></span> asdf
+            </span>
+            <span class="label label-success tttag" draggable="true" style="cursor:pointer">
+                <span class="glyphicon glyphicon-adjust"></span> asdf asdfasdfdsasdfasd asdfa asdfasd asfasdf asdfasdf asd
+            </span>
+            <span class="label label-success tttag" draggable="true" style="cursor:pointer">
+                <span class="glyphicon glyphicon-adjust"></span> asdf
+            </span>
+
+        </div>
+    </div>
+    <br/>
+    <div class="row ttnow" style="min-height:200px; background-color:green; ">
+      
+    </>
+</div>
+
+
+@section Scripts {
+<script type="text/javascript">
+
+    var dragSrcEl = null;
+
+    function handleDragStart(e) {
+        this.style.opacity = '0.4';
+
+        dragSrcEl = this;
+        e.dataTransfer.effectAllowed = 'move';
+        e.dataTransfer.setData('text', this.outerHTML);
+
+    }
+
+    function handleDragOver(e) {
+        if (e.preventDefault) {
+            e.preventDefault();
+        }
+       
+        e.dataTransfer.dropEffect = 'move';
+        
+        return false;
+    }
+    
+    function handleDrop(e) {
+        if (e.stopPropagation) {
+            e.stopPropagation();
+        }
+
+        $(dragSrcEl).css('float', 'left').appendTo(this);
+        //$(this).append(e.dataTransfer.getData('text'));
+
+        return false;
+    }
+
+    (function ($) {
+       
+
+        $(document).ready(function () {
+            var tags = document.querySelectorAll('.tttag');
+            [].forEach.call(tags, function (tag) {
+                tag.addEventListener('dragstart', handleDragStart, false);
+            });
+
+            document.querySelector('.ttnow').addEventListener('dragover', handleDragOver, false);
+            document.querySelector('.ttnow').addEventListener('drop', handleDrop, false);
+
+        });
+    })(jQuery);
+
+</script>
+}
+
+

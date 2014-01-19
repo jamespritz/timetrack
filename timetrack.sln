@@ -1,0 +1,35 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.21005.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "timetrack", "timetrack\timetrack.csproj", "{9705F8BF-3967-4A5A-8915-2B856B2C5DD8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "timetrack.Tests", "timetrack.Tests\timetrack.Tests.csproj", "{23575D63-7F45-4E9C-ADD2-2EDCE12D7816}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{5D2497A0-0BFB-4A5F-8F33-662DE95B5D4F}"
+	ProjectSection(SolutionItems) = preProject
+		.nuget\NuGet.Config = .nuget\NuGet.Config
+		.nuget\NuGet.exe = .nuget\NuGet.exe
+		.nuget\NuGet.targets = .nuget\NuGet.targets
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9705F8BF-3967-4A5A-8915-2B856B2C5DD8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9705F8BF-3967-4A5A-8915-2B856B2C5DD8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9705F8BF-3967-4A5A-8915-2B856B2C5DD8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9705F8BF-3967-4A5A-8915-2B856B2C5DD8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{23575D63-7F45-4E9C-ADD2-2EDCE12D7816}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{23575D63-7F45-4E9C-ADD2-2EDCE12D7816}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{23575D63-7F45-4E9C-ADD2-2EDCE12D7816}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{23575D63-7F45-4E9C-ADD2-2EDCE12D7816}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

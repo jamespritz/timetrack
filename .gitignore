@@ -49,6 +49,9 @@ ipch/
 *.vsp
 *.vspx
 
+#sass cache
+.sass-cache
+
 # Guidance Automation Toolkit
 *.gpState
 
