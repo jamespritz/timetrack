@@ -1,0 +1,37 @@
+/* line 4, C:/Users/jamiep/Projects/timetrack/timetrack/sass/Controls/TagPanel.scss */
+.tag__panel, .tag__panel--notinwork, .tag__panel--inwork {
+  padding: 3px;
+  min-height: 250px;
+  margin-bottom: 0px;
+}
+
+/* line 11, C:/Users/jamiep/Projects/timetrack/timetrack/sass/Controls/TagPanel.scss */
+.tag__panel--notinwork {
+  background-color: #cccccc;
+}
+/* line 15, C:/Users/jamiep/Projects/timetrack/timetrack/sass/Controls/TagPanel.scss */
+.tag__panel--notinwork .tag__text {
+  color: #1a1a1a;
+}
+
+/* line 23, C:/Users/jamiep/Projects/timetrack/timetrack/sass/Controls/TagPanel.scss */
+.tag__panel--inwork {
+  background-color: #2d4464;
+}
+/* line 28, C:/Users/jamiep/Projects/timetrack/timetrack/sass/Controls/TagPanel.scss */
+.tag__panel--inwork .tag__text {
+  color: #e6e6e6;
+}
+/* line 31, C:/Users/jamiep/Projects/timetrack/timetrack/sass/Controls/TagPanel.scss */
+.tag__panel--inwork .tag__callout {
+  border-right-color: #e6e6e6;
+}
+/* line 34, C:/Users/jamiep/Projects/timetrack/timetrack/sass/Controls/TagPanel.scss */
+.tag__panel--inwork .tag {
+  border-color: #e6e6e6;
+}
+/* line 37, C:/Users/jamiep/Projects/timetrack/timetrack/sass/Controls/TagPanel.scss */
+.tag__panel--inwork .timeBadge {
+  background-color: #e6e6e6;
+  color: #cb6828;
+}

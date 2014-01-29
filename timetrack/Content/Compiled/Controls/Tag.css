@@ -1,0 +1,34 @@
+/* line 4, C:/Users/jamiep/Projects/timetrack/timetrack/sass/Controls/Tag.scss */
+.tag {
+  margin-bottom: 2px;
+  line-height: 20px;
+  margin-left: 10px;
+  border: solid 1px #cb6828;
+  border-radius: 5px;
+  float: left;
+  padding: 3px;
+  padding-left: 10px;
+  cursor: pointer;
+  position: relative;
+}
+
+/* line 19, C:/Users/jamiep/Projects/timetrack/timetrack/sass/Controls/Tag.scss */
+.tag__text {
+  color: #4d4d4d;
+  max-width: 200px;
+  white-space: nowrap;
+  overflow: hidden;
+  padding-left: 2px;
+  text-overflow: ellipsis;
+  display: block;
+}
+
+/* line 32, C:/Users/jamiep/Projects/timetrack/timetrack/sass/Controls/Tag.scss */
+.tag__callout {
+  position: absolute;
+  top: 4px;
+  left: -12px;
+  border-top: solid 20px transparent;
+  border-right: solid 12px #cb6828;
+  border-bottom: solid 20px transparent;
+}

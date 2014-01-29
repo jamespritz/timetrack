@@ -1,0 +1,12 @@
+@import "../global";
+@import "../partials/mixins";
+
+.timeBadge {
+
+	font-size: smaller;
+	border-radius: 5px;
+	background-color: $jp-color-brand;
+	padding-left: 3px;
+	padding-right: 3px;
+	color: contrast-sharp($jp-color-text, $jp-color-brand);
+}

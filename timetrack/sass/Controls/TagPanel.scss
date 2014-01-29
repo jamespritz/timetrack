@@ -1,0 +1,42 @@
+@import "../global";
+@import "../partials/mixins";
+
+.tag__panel {
+
+	padding: 3px;
+    min-height: 250px;
+	margin-bottom: 0px;
+}
+
+.tag__panel--notinwork {
+	@extend .tag__panel;
+	background-color: $jp-color-background;
+
+	.tag__text{
+		color: contrast-sharp(#fff, $jp-color-background);
+	}
+
+}
+
+
+
+.tag__panel--inwork {
+	@extend .tag__panel;
+	background-color: $jp-color-accent;
+
+
+	.tag__text {
+		color: contrast-sharp($jp-color-text, $jp-color-brand);
+	}
+	.tag__callout {
+		border-right-color: contrast-sharp($jp-color-border, $jp-color-brand);
+	}
+	.tag {
+		border-color: contrast-sharp($jp-color-border, $jp-color-brand);
+	}
+	.timeBadge {
+		background-color: contrast-sharp($jp-color-background, $jp-color-brand);
+		color: $jp-color-brand;
+	}
+}
+

@@ -1,0 +1,14 @@
+
+
+$jp-color-brand: #cb6828;
+$jp-color-context: hsl(0,0,100);
+$jp-color-text: hsl(0,0,30);
+$jp-color-accent: #2d4464;
+$jp-color-alert: red;
+
+
+
+$jp-color-border: change-color($jp-color-context, $lightness: 70%);
+$jp-color-background: change-color($jp-color-context, $lightness: 80%);
+
+

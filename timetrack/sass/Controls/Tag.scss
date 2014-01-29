@@ -1,0 +1,42 @@
+@import "../global";
+@import "../partials/mixins";
+
+.tag {
+
+	margin-bottom: 2px;
+    line-height: 20px;
+	margin-left: 10px;
+    border: solid 1px $jp-color-brand;
+    border-radius: 5px;
+	float: left;
+    padding: 3px;
+    padding-left: 10px;
+    cursor: pointer;
+    position: relative;	
+
+}
+
+.tag__text {
+
+	color: $jp-color-text;
+	max-width: 200px;
+	white-space: nowrap;
+	overflow: hidden; 
+	padding-left: 2px;
+	text-overflow: ellipsis;
+	display: block;
+}
+
+
+
+.tag__callout {
+
+        position: absolute;
+    
+        top: 4px;
+        left: -12px;
+        border-top: solid 20px transparent;
+        border-right: solid 12px $jp-color-brand;
+        border-bottom: solid 20px transparent;
+ 
+}

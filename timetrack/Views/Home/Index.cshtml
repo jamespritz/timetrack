@@ -2,76 +2,23 @@
 @{
     ViewBag.Title = "Index";
 }
-
-<style type="text/css">
-    [draggable] {
-        -moz-user-select: none;
-        -khtml-user-select: none;
-        -webkit-user-select: none;
-        user-select: none;
-        /* Required to make elements draggable in old WebKit */
-        -khtml-user-drag: element;
-        -webkit-user-drag: element;
-    }
-
-
-    .tttags {
-        border-radius: 3px;
-        border: solid 1px blue;
-        min-height: 100px;
-    }
-    .ttnow {
-        border-radius: 3px;
-        border: solid 1px blue;
-        min-height: 200px;
-    }
-
-    .tttag {
-        float: left;
-        margin: 3px;
-        cursor: pointer;
-    }
-</style>
+<link href="~/Content/Compiled/Default/Site.css" rel="stylesheet" />
 
 <div class="container">
 
-    <div class="row tttags">
-        <div style="padding:3px;">
-            <span class="label label-success tttag" draggable="true">
-                <span class="glyphicon glyphicon-adjust"></span> asdf
-            </span>
-            <span class="label label-success tttag" draggable="true">
-                <span class="glyphicon glyphicon-adjust"></span> asdfd asdfasd
-            </span>
-            <span class="label label-success tttag" draggable="true">
-                <span class="glyphicon glyphicon-adjust"></span> asdf fdsf asdfa
-            </span>
-            <span class="label label-success tttag" draggable="true">
-                <span class="glyphicon glyphicon-adjust"></span> asdf ds
-            </span>
-            <span class="label label-success tttag" draggable="true">
-                <span class="glyphicon glyphicon-adjust"></span> asdf s
-            </span>
-            <span class="label label-success tttag" draggable="true">
-                <span class="glyphicon glyphicon-adjust"></span> asdf
-            </span>
-            <span class="label label-success tttag" draggable="true">
-                <span class="glyphicon glyphicon-adjust"></span> asdf asdf asdfasd asdfasd
-            </span>
-            <span class="label label-success tttag" draggable="true">
-                <span class="glyphicon glyphicon-adjust"></span> asdf
-            </span>
-            <span class="label label-success tttag" draggable="true">
-                <span class="glyphicon glyphicon-adjust"></span> asdf asdfasdfdsasdfasd asdfa asdfasd asfasdf asdfasdf asd
-            </span>
-            <span class="label label-success tttag" draggable="true">
-                <span class="glyphicon glyphicon-adjust"></span> asdf
+    <div class="row tag__panel--notinwork">
+
+
+            <span class="tag" draggable="true">
+                <span class="tag__text">Administration and some other text</span>
             </span>
 
-        </div>
+
+
+     
     </div>
-    <br/>
-    <div class="row ttnow">
+
+    <div class="row tag__panel--inwork">
       
     </>
 </div>
@@ -83,12 +30,76 @@
     var dragSrcEl = null;
 
     function handleDragStart(e) {
-        this.style.opacity = '0.4';
+      
 
         dragSrcEl = this;
         e.dataTransfer.effectAllowed = 'move';
         e.dataTransfer.setData('text', this.outerHTML);
 
+    }
+
+    var canDrop = false;
+    var moving = false;
+    var currentX, currentY, width;
+    var nowX, nowY, nowWidth, nowHeight;
+
+    function handleTagMove(e) {
+
+        if (e.preventDefault) { e.preventDefault(); }
+
+
+
+        if (e.targetTouches.length == 1) {
+
+
+
+            if (!moving) {
+                dragSrcEl = this;
+                var relativePosition = $(dragSrcEl).position();
+                currentX = relativePosition.left;
+                currentY = relativePosition.top;
+
+                width = $(dragSrcEl).width() / 2;
+                moving = true;
+
+                var nowPosition = $('.tag__panel--inwork').offset();
+                nowX = nowPosition.left;
+                nowY = nowPosition.top;
+                nowWidth = $('.tag__panel--inwork').width();
+                nowHeight = $('.tag__panel--inwork').height();
+
+            }
+
+            var touch = event.targetTouches[0];
+            dragSrcEl.style.left = ((touch.pageX - currentX) - width) + 'px';
+            dragSrcEl.style.top = ((touch.pageY - currentY)) + 'px';
+
+            canDrop = (((touch.pageX > nowX) && (touch.pageX < (nowX + nowWidth))) &&
+                ((touch.pageY > nowY) && (touch.pageY < (nowY + nowHeight))));
+           
+
+        }
+
+        
+  
+
+    }
+
+    function handleTouchEnd(e) {
+  
+        $(dragSrcEl).css('left', '0').css('top', '0');;
+        if (canDrop) {
+
+            
+            $(dragSrcEl).css('float', 'left').appendTo($('.tag__panel--inwork'));
+            //$(this).append(e.dataTransfer.getData('text'));
+
+        }
+        
+
+        moving = false;
+        canDrop = false;
+        dragSrcEl = null;
     }
 
     function handleDragOver(e) {
@@ -109,20 +120,26 @@
         $(dragSrcEl).css('float', 'left').appendTo(this);
         //$(this).append(e.dataTransfer.getData('text'));
 
+        dragSrcEl = null;
         return false;
+
     }
 
     (function ($) {
        
 
         $(document).ready(function () {
-            var tags = document.querySelectorAll('.tttag');
+            var tags = document.querySelectorAll('.tag');
             [].forEach.call(tags, function (tag) {
                 tag.addEventListener('dragstart', handleDragStart, false);
+                tag.addEventListener('touchmove', handleTagMove, false);
+                tag.addEventListener('touchend', handleTouchEnd, false);
             });
 
-            document.querySelector('.ttnow').addEventListener('dragover', handleDragOver, false);
-            document.querySelector('.ttnow').addEventListener('drop', handleDrop, false);
+            
+
+            document.querySelector('.tag__panel--inwork').addEventListener('dragover', handleDragOver, false);
+            document.querySelector('.tag__panel--inwork').addEventListener('drop', handleDrop, false);
 
         });
     })(jQuery);

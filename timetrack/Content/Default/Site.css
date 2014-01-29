@@ -1,0 +1,93 @@
+/* line 4, C:/Users/jamiep/Projects/timetrack/timetrack/sass/Default/../controls/tag.scss */
+.tag {
+  margin-bottom: 2px;
+  line-height: 20px;
+  margin-left: 10px;
+  border: solid 1px #cb6828;
+  border-radius: 5px;
+  float: left;
+  padding: 3px;
+  padding-left: 10px;
+  cursor: pointer;
+  position: relative;
+}
+
+/* line 19, C:/Users/jamiep/Projects/timetrack/timetrack/sass/Default/../controls/tag.scss */
+.tag__text {
+  color: #4d4d4d;
+  max-width: 200px;
+  white-space: nowrap;
+  overflow: hidden;
+  padding-left: 2px;
+  text-overflow: ellipsis;
+  display: block;
+}
+
+/* line 32, C:/Users/jamiep/Projects/timetrack/timetrack/sass/Default/../controls/tag.scss */
+.tag__callout {
+  position: absolute;
+  top: 4px;
+  left: -12px;
+  border-top: solid 20px transparent;
+  border-right: solid 12px #cb6828;
+  border-bottom: solid 20px transparent;
+}
+
+/* line 4, C:/Users/jamiep/Projects/timetrack/timetrack/sass/Default/../controls/tagpanel.scss */
+.tag__panel, .tag__panel--notinwork, .tag__panel--inwork {
+  padding: 3px;
+  min-height: 250px;
+  margin-bottom: 0px;
+}
+
+/* line 11, C:/Users/jamiep/Projects/timetrack/timetrack/sass/Default/../controls/tagpanel.scss */
+.tag__panel--notinwork {
+  background-color: #cccccc;
+}
+/* line 15, C:/Users/jamiep/Projects/timetrack/timetrack/sass/Default/../controls/tagpanel.scss */
+.tag__panel--notinwork .tag__text {
+  color: #1a1a1a;
+}
+
+/* line 23, C:/Users/jamiep/Projects/timetrack/timetrack/sass/Default/../controls/tagpanel.scss */
+.tag__panel--inwork {
+  background-color: #2d4464;
+}
+/* line 28, C:/Users/jamiep/Projects/timetrack/timetrack/sass/Default/../controls/tagpanel.scss */
+.tag__panel--inwork .tag__text {
+  color: #e6e6e6;
+}
+/* line 31, C:/Users/jamiep/Projects/timetrack/timetrack/sass/Default/../controls/tagpanel.scss */
+.tag__panel--inwork .tag__callout {
+  border-right-color: #e6e6e6;
+}
+/* line 34, C:/Users/jamiep/Projects/timetrack/timetrack/sass/Default/../controls/tagpanel.scss */
+.tag__panel--inwork .tag {
+  border-color: #e6e6e6;
+}
+/* line 37, C:/Users/jamiep/Projects/timetrack/timetrack/sass/Default/../controls/tagpanel.scss */
+.tag__panel--inwork .timeBadge {
+  background-color: #e6e6e6;
+  color: #cb6828;
+}
+
+/* line 4, C:/Users/jamiep/Projects/timetrack/timetrack/sass/Default/../controls/timebadge.scss */
+.timeBadge {
+  font-size: smaller;
+  border-radius: 5px;
+  background-color: #cb6828;
+  padding-left: 3px;
+  padding-right: 3px;
+  color: #e6e6e6;
+}
+
+/* line 9, C:/Users/jamiep/Projects/timetrack/timetrack/sass/Default/Site.scss */
+[draggable] {
+  -moz-user-select: none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
+  /* Required to make elements draggable in old WebKit */
+  -khtml-user-drag: element;
+  -webkit-user-drag: element;
+}

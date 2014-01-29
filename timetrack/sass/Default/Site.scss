@@ -1,0 +1,19 @@
+﻿@import "../global";
+@import "../controls/tag";
+@import "../controls/tagpanel";
+@import "../controls/timebadge";
+
+
+
+
+[draggable] {
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
+    /* Required to make elements draggable in old WebKit */
+    -khtml-user-drag: element;
+    -webkit-user-drag: element;
+}
+
+

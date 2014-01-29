@@ -1,0 +1,9 @@
+/* line 4, C:/Users/jamiep/Projects/timetrack/timetrack/sass/Controls/TimeBadge.scss */
+.timeBadge {
+  font-size: smaller;
+  border-radius: 5px;
+  background-color: #cb6828;
+  padding-left: 3px;
+  padding-right: 3px;
+  color: #e6e6e6;
+}
